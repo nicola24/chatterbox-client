@@ -28,27 +28,25 @@ class App {
     $.ajax({
       url: this.server,
       type: 'GET',
-      data: 'order=-createAt&limit=100', // limit at 1000 messages
+      data: 'order=-createAt&limit=1000', // limit at 1000 messages
       success: function(data) {
         console.log('FETCH successful', data);
         // var div = document.getElementById('chats');
-        // div.innerHTML = JSON.stringify(data);
+        // div.innerHTML = JSON.stringify(data);s
 
         var $chat = $('#chats');
 
         for (var i = 0; i < data.results.length; i++) { 
-          var $createdAt = $('<li id="createAt">' + data.results[i].createdAt + '</li>');
+          
           var $username = $('<button id="username">' + data.results[i].username + '</button>');
-          var $text = $('<p id="username">' + data.results[i].text + '</p>');
+          var $text = $('<li id="username">' + data.results[i].text + '</li>');
+          var $createdAt = $('<p id="createAt">' + data.results[i].createdAt + '</p>');
           
           $username.appendTo($chat);
           $text.appendTo($chat);
           $createdAt.appendTo($chat);
           
         }
-          
-          
-
       },
       error: function (data) {
         console.error('FETCH failed', data);
