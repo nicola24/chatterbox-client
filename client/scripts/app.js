@@ -3,17 +3,10 @@ $(document).ready(function() {});
 class App {
   constructor() {
     this.server = 'http://parse.sfs.hackreactor.com/chatterbox/classes/messages';
-    // this.message = {
-    //   username: username, 
-    //   text: text,
-    //   roomname: roomname
-    // };
-  
   }
 
-
+  // init function
   init() {
-
   }
 
   send(message) {
@@ -35,7 +28,7 @@ class App {
     $.ajax({
       url: this.server,
       type: 'GET',
-      data: 'order=-createAt&limit=1000', // limit at 1000 messages
+      data: 'order=-createAt&limit=100', // limit at 1000 messages
       success: function(data) {
         console.log('FETCH successful', data);
         // var div = document.getElementById('chats');
@@ -44,13 +37,13 @@ class App {
         var $chat = $('#chats');
 
         for (var i = 0; i < data.results.length; i++) { 
-          var $createAt = $('<li id="createAt">' + data.results[i].createAt + '</li>');
+          var $createdAt = $('<li id="createAt">' + data.results[i].createdAt + '</li>');
           var $username = $('<button id="username">' + data.results[i].username + '</button>');
           var $text = $('<p id="username">' + data.results[i].text + '</p>');
           
           $username.appendTo($chat);
           $text.appendTo($chat);
-          $createAt.appendTo($chat);
+          $createdAt.appendTo($chat);
           
         }
           
