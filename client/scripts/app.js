@@ -28,7 +28,7 @@ class App {
     $.ajax({
       url: this.server,
       type: 'GET',
-      data: 'order=-createdAt&limit=10', // limit at x messages
+      data: 'order=-createdAt&limit=100', // limit at x messages
       success: function(data) {
         console.log('FETCH successful', data);
         // var div = document.getElementById('chats');

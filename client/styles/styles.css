@@ -85,13 +85,33 @@ form input[type=text] {
 
 .friend {
     color: #fff;
-    background-color: #D3D3D3;
+    background-color: #0090da;
+}
+
+ul {
+    border: 1px;;
 }
 
 li {
+    margin: 10px;
+    list-style-type: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
 
-background-color: grey;
+#username {
+    
+}
 
+#text {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+#createAt {
+    margin-left: 5px;
+    
 }
 
 
