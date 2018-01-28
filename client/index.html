@@ -26,24 +26,29 @@ if (!/(&|\?)username=/.test(window.location.search)) {
   <body>
 
     <div id="main">
-      <h1>chatterbox</h1>
+
+      <h1>Chatterbox</h1>
+      <h3>Room:</h3>
       
-      <p>Room:</p>
+      <div id="dropmenu">
+        <select>
+          <option value="value">Lobby</option>    
+        </select>
+      </div>
 
-      <select>
-        <option>dropdown</option>    
-      </select>
-
-      <form>
-        <input type="text" id="input" placeholder="Enter message here...">
+      <form id="form">
+        <input type="text" id="inputMessage" placeholder="Enter message here...">
         <input type="submit" id="submit" value="Submit">
       </form>    
-  
-      <button>Clear Chat</button>
+      
+      <div id="clearChat">
+        <button>Clear Chat</button>
+      </div>
 
     </div>
     
-    <div id="chats">      
+    <div>
+      <ul id="chats"></ul>
     </div>
 
   </body>
